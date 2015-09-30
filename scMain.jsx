@@ -1,4 +1,5 @@
 import React from 'react';
+import SCSquare from './scSquare';
 
 export default class SCMain extends React.Component {
   constructor(props) {
@@ -6,7 +7,6 @@ export default class SCMain extends React.Component {
 
     this.state = {
       answer: [],
-      displayAnswer: [],
       colArray: [],
       rowArray: []
     };
@@ -32,9 +32,6 @@ export default class SCMain extends React.Component {
   }
 
   setDisplayAnswer() {
-    this.setState({
-      displayAnswer: this.state.answer
-    });
   }
 
   setSquare() {
@@ -52,7 +49,6 @@ export default class SCMain extends React.Component {
       colArray: array,
       rowArray: array2,
       answer: answer,
-      displayAnswer: []
     });
   }
 
@@ -66,14 +62,6 @@ export default class SCMain extends React.Component {
     }
 
     return array;
-  }
-
-  handleNewCalcClciked() {
-    this.setSquare();
-  }
-
-  handleAnswerClciked() {
-    this.setDisplayAnswer();
   }
 
   render() {
@@ -99,9 +87,7 @@ export default class SCMain extends React.Component {
 
       for (let j = 0; j < num; j++) {
         column.push(
-          <div className="mdl-cell mdl-cell--2-col">
-            <input type="number" className="square-input" maxLength="2" value={this.state.displayAnswer[answerCnt]} />
-          </div>
+          <SCSquare answer={this.state.answer[answerCnt]} />
         );
         answerCnt++;
       }
