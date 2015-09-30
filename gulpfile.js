@@ -1,37 +1,26 @@
 var gulp = require('gulp');
 var browserify = require('browserify');
 var babelify = require('babelify');
+// var uglify = require('gulp-uglify');
 var source = require('vinyl-source-stream');
+// var buffer = require('vinyl-buffer');
 var browserSync = require('browser-sync');
-
 var watchify = require('watchify');
 
-gulp.task('build', function() {
-  // browserify({
-  //   entries: 'index.jsx',
-  //   extensions: ['.jsx'],
-  //   debug: true
-  // })
-  var bundler = browserify({
+gulp.task('browserify', function() {
+  browserify({
     entries: 'index.jsx',
     extensions: ['.jsx'],
     debug: true
-  });
-  var watcher = watchify(bundler);
+  })
+  .transform(babelify)
+  .bundle()
+  .pipe(source('bundle.js'))
+  .pipe(gulp.dest('dist'));
+});
 
-  return watcher
-    .on('update', function() {
-      var updateStart = Date.now();
-      console.log('Updating!');
-      watcher.bundle()
-        .pipe(source('bundle.js'))
-        .pipe(gulp.dest('./dist'));
-      console.log('Updated!', (Date.now() - updateStart) + 'ms');
-    })
-    .transform(babelify)
-    .bundle()
-    .pipe(source('bundle.js'))
-    .pipe(gulp.dest('dist'));
+gulp.task('watch', function() {
+  gulp.watch('**/*.jsx', ['browserify'])
 });
 
 gulp.task('browserSync', function() {
@@ -46,4 +35,4 @@ gulp.task('browserSync', function() {
   });
 });
 
-gulp.task('default', ['build', 'browserSync']);
+gulp.task('default', ['browserify', 'watch', 'browserSync']);

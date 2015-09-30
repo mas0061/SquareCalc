@@ -13,8 +13,9 @@
     "browser-sync": "^2.8.0",
     "browserify": "^11.0.0",
     "gulp": "^3.9.0",
+    "gulp-uglify": "^1.4.1",
     "reactify": "^1.1.1",
-    "uglify-js": "^2.4.23",
+    "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.3.0"
   },
