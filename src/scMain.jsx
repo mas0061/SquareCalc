@@ -70,11 +70,11 @@ export default class SCMain extends React.Component {
     var num = this.props.squareNum;
 
     for (let i = 0; i < num; i++) {
-      firstColumn.push(<div className="mdl-cell mdl-cell--2-col">{this.state.colArray[i]}</div>);
+      firstColumn.push(<div className="mdl-cell mdl-cell--2-col" key={'fc_' + i}>{this.state.colArray[i]}</div>);
     }
 
     rows.push(
-      <div className="mdl-grid square-horizontal">
+      <div className="mdl-grid square-horizontal" key='hor'>
         <div className="mdl-cell mdl-cell--2-col square-cross">+</div>
         {firstColumn}
       </div>
@@ -87,13 +87,13 @@ export default class SCMain extends React.Component {
 
       for (let j = 0; j < num; j++) {
         column.push(
-          <SCSquare answer={this.state.answer[answerCnt]} event={this.props.event} />
+          <SCSquare answer={this.state.answer[answerCnt]} event={this.props.event} key={this.state.answer[answerCnt]} />
         );
         answerCnt++;
       }
 
       rows.push(
-        <div className="mdl-grid">
+        <div className="mdl-grid" key={'grid_' + i}>
           <div className="mdl-cell mdl-cell--2-col square-vertical">{this.state.rowArray[i]}</div>
           {column}
         </div>
