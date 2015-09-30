@@ -40,4 +40,15 @@ gulp.task('browserSync', function() {
   });
 });
 
+gulp.task('release', ['browserify'], function() {
+  gulp.src([
+    'index.html',
+    'dist/*',
+    'css/*',
+    'node_modules/material-design-lite/*.min.*'
+  ],
+  { base: '.'})
+  .pipe(gulp.dest('public'))
+});
+
 gulp.task('default', ['browserify', 'watch', 'browserSync']);
