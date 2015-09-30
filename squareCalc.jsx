@@ -12,8 +12,6 @@ export default class SquareCalc extends React.Component {
   }
 
   _handleEvent(event) {
-    console.log(event);
-
     this.setState({
       event: event
     });

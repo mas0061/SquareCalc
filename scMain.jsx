@@ -39,8 +39,8 @@ export default class SCMain extends React.Component {
     let array2 = this.shuffle([1, 2, 3, 4, 5]);
     let answer = [];
 
-    array2.forEach(function(e1, i1) {
-      array.forEach(function(e2, i2) {
+    array2.forEach(function(e1) {
+      array.forEach(function(e2) {
         answer.push(e1 + e2);
       });
     });
@@ -70,7 +70,7 @@ export default class SCMain extends React.Component {
     var num = this.props.squareNum;
 
     for (let i = 0; i < num; i++) {
-      firstColumn.push(<div className="mdl-cell mdl-cell--2-col" id={'sq-h-' + (i + 1)}>{this.state.colArray[i]}</div>);
+      firstColumn.push(<div className="mdl-cell mdl-cell--2-col">{this.state.colArray[i]}</div>);
     }
 
     rows.push(
@@ -94,7 +94,7 @@ export default class SCMain extends React.Component {
 
       rows.push(
         <div className="mdl-grid">
-          <div className="mdl-cell mdl-cell--2-col square-vertical" id={'sq-v-' + (i + 1)}>{this.state.rowArray[i]}</div>
+          <div className="mdl-cell mdl-cell--2-col square-vertical">{this.state.rowArray[i]}</div>
           {column}
         </div>
       );
@@ -103,7 +103,7 @@ export default class SCMain extends React.Component {
     return (
       <main className="mdl-layout__content">
         <div className="page-content">
-        {rows}
+          {rows}
         </div>
       </main>
     );

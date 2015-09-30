@@ -26,7 +26,10 @@ export default class SCSquare extends React.Component {
   render() {
     return (
       <div className="mdl-cell mdl-cell--2-col">
-        <input type="number" className="square-input" style={this.state.style} maxLength="2" value={this.state.inputText} onChange={this._changeValue.bind(this)} />
+        <input type="number" className="square-input" maxLength="2"
+          style={this.state.style}
+          value={this.state.inputText}
+          onChange={this._changeValue.bind(this)} />
       </div>
     );
   }
