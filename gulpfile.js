@@ -9,7 +9,7 @@ var watchify = require('watchify');
 
 gulp.task('browserify', function() {
   browserify({
-    entries: 'index.jsx',
+    entries: 'src/index.jsx',
     extensions: ['.jsx'],
     debug: true
   })
@@ -20,7 +20,7 @@ gulp.task('browserify', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('**/*.jsx', ['browserify'])
+  gulp.watch('src/*.jsx', ['browserify'])
 });
 
 gulp.task('browserSync', function() {
