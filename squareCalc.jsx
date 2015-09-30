@@ -3,24 +3,27 @@ import SCHeader from './scHeader';
 import SCMain from './scMain';
 
 export default class SquareCalc extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      event: '',
+    };
+  }
+
   _handleEvent(event) {
     console.log(event);
 
-    switch (event) {
-      case 'newCalcButton':
-        console.log('click new question');
-        break;
-      case 'answerButton':
-        console.log('click answer');
-        break;
-    }
+    this.setState({
+      event: event
+    });
   }
 
-        // <SCHeader handleEvent={this._handleEvent.bind(this)} />
   render() {
     return (
       <div>
-        <SCMain squareNum={5} />
+        <SCHeader handleEvent={this._handleEvent.bind(this)} />
+        <SCMain squareNum={5} event={this.state.event} />
       </div>
     );
   }
