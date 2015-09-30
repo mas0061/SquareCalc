@@ -13,13 +13,32 @@ export default class SCSquare extends React.Component {
     };
   }
 
-  _changeValue(event) {
-    var strAnswer = this.props.answer.toString();
+  componentWillReceiveProps(nextProps) {
+    switch (nextProps.event) {
+      case 'newCalcButton':
+          this.setState({ inputText: '', style: this.styleBlack });
+        break;
+      case 'answerButton':
+        if (this.state.inputText === '') {
+          this.setState({ inputText: this.props.answer, style: this.styleRed });
+        } else {
+          this.setState({ style: this._judgeStyle(this.state.inputText, nextProps.answer) });
+        }
+        break;
+    }
+  }
 
-    if (strAnswer === event.target.value) {
-      this.setState({ inputText: event.target.value, style: this.styleBlack });
+  _changeValue(event) {
+    // var style = this._judgeStyle(event.target.value, this.props.answer);
+    // this.setState({ inputText: event.target.value, style: style });
+    this.setState({ inputText: event.target.value, style: this.styleBlack });
+  }
+
+  _judgeStyle(input, answer) {
+    if (answer.toString() === input) {
+      return this.styleBlack;
     } else {
-      this.setState({ inputText: event.target.value, style: this.styleRed });
+      return this.styleRed;
     }
   }
 
