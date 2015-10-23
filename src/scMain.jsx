@@ -8,7 +8,7 @@ export default class SCMain extends React.Component {
     this.state = {
       answer: [],
       colArray: [],
-      rowArray: []
+      rowArray: [],
     };
   }
 
@@ -21,17 +21,11 @@ export default class SCMain extends React.Component {
       case 'newCalcButton':
         this.refreshCalc();
         break;
-      case 'answerButton':
-        this.setDisplayAnswer();
-        break;
     }
   }
 
   refreshCalc() {
     this.setSquare();
-  }
-
-  setDisplayAnswer() {
   }
 
   setSquare() {

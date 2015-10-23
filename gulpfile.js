@@ -51,4 +51,8 @@ gulp.task('release', ['browserify'], function() {
   .pipe(gulp.dest('public'))
 });
 
+gulp.task('deploy', ['release'], function() {
+  // @todo mas0061.netへのリリース
+});
+
 gulp.task('default', ['browserify', 'watch', 'browserSync']);
