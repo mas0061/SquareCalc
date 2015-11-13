@@ -35,11 +35,7 @@ export default class SCSquare extends React.Component {
   }
 
   _judgeStyle(input, answer) {
-    if (answer.toString() === input) {
-      return this.styleBlack;
-    } else {
-      return this.styleRed;
-    }
+    return (answer.toString() === input ? this.styleBlack : this.styleRed);
   }
 
   render() {
