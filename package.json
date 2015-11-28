@@ -22,7 +22,7 @@
     "watchify": "^3.3.0"
   },
   "dependencies": {
-    "material-design-lite": "^1.0.4-2",
+    "material-design-lite": "^1.0.6",
     "react": "^0.13.3"
   }
 }
