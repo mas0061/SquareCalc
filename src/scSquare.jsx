@@ -22,7 +22,8 @@ export default class SCSquare extends React.Component {
         if (this.state.inputText === '') {
           this.setState({ inputText: this.props.answer, style: this.styleRed });
         } else {
-          this.setState({ style: this._judgeStyle(this.state.inputText, nextProps.answer) });
+          var style = this._judgeStyle(this.state.inputText, nextProps.answer);
+          this.setState({ style: style });
         }
         break;
     }
@@ -40,7 +41,7 @@ export default class SCSquare extends React.Component {
 
   render() {
     return (
-      <div className="mdl-cell mdl-cell--2-col">
+      <div className="mdl-cell mdl-cell--2-col square-item">
         <input type="number" className="square-input" min ={0} max={99}
           style={this.state.style}
           value={this.state.inputText}

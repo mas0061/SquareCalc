@@ -81,7 +81,10 @@ export default class SCMain extends React.Component {
 
       for (let j = 0; j < num; j++) {
         column.push(
-          <SCSquare answer={this.state.answer[answerCnt]} event={this.props.event} key={this.state.answer[answerCnt]} />
+          <SCSquare
+            answer={this.state.answer[answerCnt]}
+            event={this.props.event}
+            key={this.state.answer[answerCnt]} />
         );
         answerCnt++;
       }
