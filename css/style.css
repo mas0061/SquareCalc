@@ -1,24 +1,26 @@
 .square-cross {
-  width: 40px;
-  height: 20px;
+  width: 35px;
   text-align: right;
 }
 .square-horizontal {
   height: 20px;
-  font-size: 40px;
+  font-size: 35px;
   text-align: center;
 }
 .square-vertical {
-  width: 40px;
-  font-size: 40px;
+  width: 35px;
+  font-size: 35px;
   text-align: right;
-  line-height: 55px;
+  line-height: 40px;
+}
+.square-item {
+  text-align: center;
 }
 
 input[type="number"] {
-  width: 80%;
+  width: 70%;
   height: 100%;
-  font-size: 40px;
+  font-size: 35px;
   text-align: center;
   border: 1px solid black;
   -webkit-border-radius: 3px;
