@@ -1,0 +1,6 @@
+# SquareCalc
+
+This repository is web site of 25 cell calculation.
+
+## License
+The MIT License (MIT)
