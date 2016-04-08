@@ -14,7 +14,7 @@ gulp.task('browserify', function() {
     extensions: ['.jsx'],
     debug: true
   })
-  .transform(babelify)
+  .transform("babelify", {presets: ["es2015", "react"]})
   .bundle()
   .pipe(source('bundle.js'))
   .pipe(buffer())

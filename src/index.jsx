@@ -1,7 +1,7 @@
-import React from 'react';
+import ReactDOM from 'react-dom';
 import SquareCalc from './squareCalc';
 
-React.render(
+ReactDOM.render(
   <SquareCalc />,
   document.getElementById('squareCalc')
 );
