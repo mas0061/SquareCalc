@@ -21,10 +21,10 @@ export default class SCHeader extends React.Component {
           <div className="mdl-layout-spacer"></div>
           <nav className="mdl-navigation">
             <div className="mdl-navigation__link">
-              <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="new-calc-button" onClick={this.handleNewCalcClciked.bind(this)}>あたらしいけいさん</button>
+              <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" id="new-calc-button" onClick={this.handleNewCalcClciked.bind(this)}>あたらしいけいさん</button>
             </div>
             <div className="mdl-navigation__link">
-              <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="answer-button" onClick={this.handleAnswerClciked.bind(this)}>こたえ</button>
+              <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" id="answer-button" onClick={this.handleAnswerClciked.bind(this)}>こたえ</button>
             </div>
           </nav>
         </div>
