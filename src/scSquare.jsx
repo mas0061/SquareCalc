@@ -16,7 +16,7 @@ export default class SCSquare extends React.Component {
   componentWillReceiveProps(nextProps) {
     switch (nextProps.event) {
       case 'newCalcButton':
-          this.setState({ inputText: '', style: this.styleBlack });
+        this.setState({ inputText: '', style: this.styleBlack });
         break;
       case 'answerButton':
         if (this.state.inputText === '') {
@@ -26,6 +26,13 @@ export default class SCSquare extends React.Component {
           this.setState({ style: style });
         }
         break;
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.event === 'answerButton'
+      && this.state.inputText.toString() !== this.props.answer.toString()) {
+      this.props.isWrong();
     }
   }
 

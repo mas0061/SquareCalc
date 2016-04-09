@@ -58,6 +58,10 @@ export default class SCMain extends React.Component {
     return array;
   }
 
+  _isWrong() {
+    console.log('isWrong is called.');
+  }
+
   render() {
     var firstColumn = [];
     var rows = [];
@@ -84,7 +88,8 @@ export default class SCMain extends React.Component {
           <SCSquare
             answer={this.state.answer[answerCnt]}
             event={this.props.event}
-            key={this.state.answer[answerCnt]} />
+            key={this.state.answer[answerCnt]}
+            isWrong={this._isWrong.bind(this)} />
         );
         answerCnt++;
       }
