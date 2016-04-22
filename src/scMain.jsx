@@ -29,8 +29,16 @@ export default class SCMain extends React.Component {
   }
 
   setSquare() {
-    let array = this.shuffle([1, 2, 3, 4, 5]);
-    let array2 = this.shuffle([1, 2, 3, 4, 5]);
+    var times = function(i) {
+      var l = [];
+      for (var index = 0; index < i; index++) {
+        l.push(index + 1);
+      }
+      return l;
+    };
+
+    const array = this.shuffle(times(this.props.squareNum));
+    const array2 = this.shuffle(times(this.props.squareNum));
     let answer = [];
 
     array2.forEach(function(e1) {
@@ -47,7 +55,7 @@ export default class SCMain extends React.Component {
   }
 
   shuffle(array) {
-    var m = array.length, t, i;
+    let m = array.length, t, i;
     while (m) {
       i = Math.floor(Math.random() * m--);
       t = array[m];
