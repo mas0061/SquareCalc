@@ -41,6 +41,7 @@ gulp.task('browserSync', function() {
 });
 
 gulp.task('release', ['browserify'], function() {
+  process.env.NODE_ENV = 'production';
   gulp.src([
     'index.html',
     'dist/*',

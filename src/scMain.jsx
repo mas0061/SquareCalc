@@ -29,7 +29,7 @@ export default class SCMain extends React.Component {
   }
 
   setSquare() {
-    var times = function(i) {
+    var timesArrayPlus1 = function(i) {
       var l = [];
       for (var index = 0; index < i; index++) {
         l.push(index + 1);
@@ -37,8 +37,8 @@ export default class SCMain extends React.Component {
       return l;
     };
 
-    const array = this.shuffle(times(this.props.squareNum));
-    const array2 = this.shuffle(times(this.props.squareNum));
+    const array = this.shuffle(timesArrayPlus1(this.props.squareNum));
+    const array2 = this.shuffle(timesArrayPlus1(this.props.squareNum));
     let answer = [];
 
     array2.forEach(function(e1) {
